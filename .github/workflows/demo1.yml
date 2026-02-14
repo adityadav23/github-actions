@@ -1,7 +1,9 @@
 name: Deployment Exercise Two
 
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
   lint:
