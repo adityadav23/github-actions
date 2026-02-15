@@ -23,7 +23,7 @@ jobs:
           name: build-artifacts
           path: dist/
   deploy:
-    # needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
