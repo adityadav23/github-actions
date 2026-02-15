@@ -15,7 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install dependencies and build
+        id: build
       - run: npm ci
+        if: ${{ steps.build.outcome == 'failure' }}
       - run: npm run build
       - name: job artifacts
         uses: actions/upload-artifact@v4
