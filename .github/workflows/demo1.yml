@@ -18,6 +18,7 @@ jobs:
       - name: Install dependencies and build
         id: build
       - run: npm ci
+      - name: Build project
         if: ${{ steps.build.outcome == 'failure' }}
       - run: npm run build
       - name: job artifacts
